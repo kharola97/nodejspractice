@@ -1,0 +1,7 @@
+query parameters are key-value pairs that appear after '?' in url 
+the '?' separates path and the query parameters it is mainly used for
+filtering of resources. Multiple query parameters are separated by '&'
+between them
+
+
+http module in node js handles the request and response in server
