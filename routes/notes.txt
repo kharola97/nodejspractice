@@ -1,0 +1,50 @@
+ node js is an open source and cross-platform runtime environment
+ for for executing javascript code outside of a browser quite often we use node js to build
+backend services also caleed api's or
+less lines of code less files doubled no of req percent faster response time we use javascript in
+front end have open source libraries open or available dont have to build from scratch 
+ node is used for building applications that include a lot of disk or network access
+we can serve more client without the need to throw in more hardware
+thats why node applications are highly scalable
+node should not be used for cpu intensive applications like video encoding or an image
+manipulation service in these we have alot of calculations that should be done by cpu and few operations
+and few operations that touch the file system or the network since node applications are 
+single threaded when performing the calculations to serve one client other clients
+have to wait thts why node should not be used for cpu intensive applications and should only be used for
+data intensive and real time applications. Node is a C++ program it includes chromes v8 javascript engine
+in node we dont have window or document objects these are a part of runtime environment
+that we get with browsers in node we have other objects to work with files with the operating system networking
+system and so on
+
+NODE MODULE SYSTEM 
+console.log() this object is called global object it is a part of global scope that means we can 
+access it anywhere in any files we have other objects and functions that are also globally available in node
+for eg we have setTimeout() we use thid to call a function after a delay we can use this on client 
+we can use this inside of a browser or inside of node  we also have setInterval() which we use
+to repeatedly call a function after a given delay and use clear	nterval to stop that function from being called
+repeadtedly.. In browsers we have this window object that represents our global scope 
+so all the variables and functions that are defined globally we can access them via this window object
+we can do console.log  the javascript engine will prefix it as window.console.log 
+thats where this object is defined but in node we dont have widow object instead we  have global object
+all the functions like settimeout clearinterval we can access them through global object 
+global.console.log etc etc  if we define  a variable for eg var message = 'ankit' this varibale wont be added
+in global object if we did a console.log(global.message) we will get undefined because message is not added to 
+global object they are only scoped inside the file they have been created in
+but if we define function in variale that function is added to the global scope its available via window objwct
+in real time applications we split our javascript code in multiple files so it is possible that we have two
+files and both have function defined with same name that means new defination is overwrite the last name
+to solve that problem we need modules we need to build small modules  where we define our var and func so two func or var dont collied 
+and overwrite the other encapsulated inside module every file in a anode application is consdered a module
+the object and function are scoped to that file they are private 
+
+
+the require("../filename")  this require function returns the object that is exported from this target 
+module when loading a module suing the require function iyts better to store the result ina constant fro eg 
+const logger = require('../filke') so we dont want to accidently overwrite the value of logger 
+with tools like jshint index.js (jshint is the tool here) we can scan javascript code to error like this 
+in your module you an export single func or an object eg function log(msg){console.log(msg)} module.exports = log inrout page
+const log = require("../file')  direct write log('msg')   the require function is not global its local to each module 
+each module is is wrapped into a function before being exported the function also has some parameters like exports,require module,
+ filenmae,dirname but these are behind the scenes we call this module wrapper function 
+
+
